@@ -1,2 +1,2 @@
 #!/bin/bash
-java -jar lib/cwxls-1.0.jar $1
+java -jar lib/awscwxls-1.0.jar $1
