@@ -1,4 +1,4 @@
-package com.ipcglobal.cwxls.xls;
+package com.ipcglobal.awscwxls.xls;
 
 import java.util.HashMap;
 import java.util.Map;

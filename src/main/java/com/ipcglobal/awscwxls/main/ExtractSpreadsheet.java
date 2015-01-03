@@ -10,7 +10,7 @@ import org.apache.commons.logging.LogFactory;
 import com.ipcglobal.awscwxls.cw.DimensionMetric;
 import com.ipcglobal.awscwxls.cw.ExtractMetrics;
 import com.ipcglobal.awscwxls.util.LogTool;
-import com.ipcglobal.cwxls.xls.MetricSpreadsheet;
+import com.ipcglobal.awscwxls.xls.MetricSpreadsheet;
 
 /**
  * ExtractSpreadsheet is the main entry point, it is passed a properties file to determine the execution path.
