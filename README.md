@@ -20,7 +20,8 @@ To run:
  
 Java Project Overview
  * Eclipse project
- * Uses Apache POI to create the spreadsheets.
+ * Uses Apache POI to create the spreadsheets.  Take a look at BaseXls.java, encapsulates most of the POI complexity, MetricSpreadsheet.java creates the xls.
  * Entry point: ExtractSpreadsheet.main()
+ * ExtractMetrics.java does most of the heavy lifting - connecting to CW and getting the metrics/statistics
  
 
