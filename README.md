@@ -18,7 +18,7 @@ To run:
 * Advanced
 	* Review properties/template.properties.  This is an example of collecting stats from multiple Namespace/Dimension/Metric/Statistic combinations
  
- # Java Project
+ Java Project Overview
  * Eclipse project
  * Uses Apache POI to create the spreadsheets.
  * Entry point: ExtractSpreadsheet.main()
