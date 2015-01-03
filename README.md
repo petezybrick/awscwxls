@@ -19,9 +19,11 @@ To run:
 	* Review properties/template.properties.  This is an example of collecting stats from multiple Namespace/Dimension/Metric/Statistic combinations
  
 Java Project Overview
- * Eclipse project
+ * Maven project in Eclipse, but should easily port to other IDE's
  * Uses Apache POI to create the spreadsheets.  Take a look at BaseXls.java, encapsulates most of the POI complexity, MetricSpreadsheet.java creates the xls.
  * Entry point: ExtractSpreadsheet.main()
  * ExtractMetrics.java does most of the heavy lifting - connecting to CW and getting the metrics/statistics
+ 
+Thanks to Alois Reitbauer, the examples on his [blog](http://apmblog.compuware.com/2010/04/22/week-14-building-your-own-amazon-cloudwatch-monitor-in-5-steps/) accelerated my understanding of the CW API. 
  
 
