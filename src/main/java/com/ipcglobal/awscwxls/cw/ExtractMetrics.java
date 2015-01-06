@@ -43,7 +43,7 @@ public class ExtractMetrics {
 	private List<String> metricNames;
 	
 	/** The dimension statistics by metric. */
-	private Map<String,List<String>> dimensionStatisticsByMetric;
+	private Map<String,List<String>> metricStatisticsByMetric;
 	
 	/** The properties. */
 	private Properties properties;
@@ -90,7 +90,7 @@ public class ExtractMetrics {
 	 * @throws Exception the exception
 	 */
 	public List<DimensionMetric> extractMetricsByDimension( ExtractItem extractItem ) throws Exception {
-		initStatisticsByMetric( extractItem.getDimensionStatisticNames() );
+		initStatisticsByMetric( extractItem.getMetricStatisticNames() );
 		List<DimensionMetric> dimensionMetrics = new ArrayList<DimensionMetric>();
 		GetMetricStatisticsRequest getMetricRequest = new GetMetricStatisticsRequest();
 		getMetricRequest.setNamespace( extractItem.getNamespace() );
@@ -113,7 +113,7 @@ public class ExtractMetrics {
 	
 			for (String metricName : metricNames ) {
 				log.info( extractItem.getNamespace() + ": dimensionName=" + extractItem.getDimensionName()  + ", dimensionValue=" + dimensionValue + ", metric="+metricName );
-				List<String> statistics = dimensionStatisticsByMetric.get(metricName);
+				List<String> statistics = metricStatisticsByMetric.get(metricName);
 				for( String statistic : statistics ) {
 					String metricNameStatisticName = new StringBuilder(metricName).append("|").append(statistic).toString();
 					dimensionMetric.putDistinctMetricNameStatisticName( metricNameStatisticName );
@@ -152,23 +152,23 @@ public class ExtractMetrics {
 	/**
 	 * Inits the statistics by metric.
 	 *
-	 * @param dimensionStatisticNames the dimension statistic names
+	 * @param metricStatisticNames the dimension statistic names
 	 * @throws Exception the exception
 	 */
-	private void initStatisticsByMetric( List<String> dimensionStatisticNames ) throws Exception {
-		dimensionStatisticsByMetric = new HashMap<String,List<String>>();
-		for( String metricStatisticName : dimensionStatisticNames ) {
+	private void initStatisticsByMetric( List<String> metricStatisticNames ) throws Exception {
+		metricStatisticsByMetric = new HashMap<String,List<String>>();
+		for( String metricStatisticName : metricStatisticNames ) {
 			String[] temp = metricStatisticName.split("[|]");
 			String metricName = temp[0];
 			String statisticName = temp[1];
-			List<String> statisticNames = dimensionStatisticsByMetric.get( metricName );
+			List<String> statisticNames = metricStatisticsByMetric.get( metricName );
 			if( statisticNames == null ) {
 				statisticNames = new ArrayList<String>();
-				dimensionStatisticsByMetric.put( metricName, statisticNames );
+				metricStatisticsByMetric.put( metricName, statisticNames );
 			}
 			statisticNames.add( statisticName );
 		}
-		metricNames = new ArrayList<String>( dimensionStatisticsByMetric.keySet() );
+		metricNames = new ArrayList<String>( metricStatisticsByMetric.keySet() );
 		Collections.sort( metricNames );
 	}
 

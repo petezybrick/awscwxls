@@ -22,8 +22,8 @@ public class ExtractItem {
 	/** The dimension values. */
 	private List<String> dimensionValues;
 	
-	/** The dimension statistic names. */
-	private List<String> dimensionStatisticNames;
+	/** The metric statistic names. */
+	private List<String> metricStatisticNames;
 	
 	/** The offset. */
 	private int offset;
@@ -39,7 +39,7 @@ public class ExtractItem {
 		this.periodMinutes = Integer.parseInt( properties.getProperty("periodMinutes."+offset) );
 		this.dimensionName = properties.getProperty("dimensionName."+offset).trim();
 		this.dimensionValues = Arrays.asList( properties.getProperty("dimensionValues."+offset).split("[ ]") );
-		this.dimensionStatisticNames = Arrays.asList( properties.getProperty("dimensionStatisticNames."+offset).split("[ ]") );
+		this.metricStatisticNames = Arrays.asList( properties.getProperty("metricStatisticNames."+offset).split("[ ]") );
 		this.offset = offset;
 	}
 
@@ -98,21 +98,21 @@ public class ExtractItem {
 	}
 
 	/**
-	 * Gets the dimension statistic names.
+	 * Gets the metric statistic names.
 	 *
-	 * @return the dimension statistic names
+	 * @return the metric statistic names
 	 */
-	public List<String> getDimensionStatisticNames() {
-		return dimensionStatisticNames;
+	public List<String> getMetricStatisticNames() {
+		return metricStatisticNames;
 	}
 
 	/**
-	 * Sets the dimension statistic names.
+	 * Sets the metric statistic names.
 	 *
-	 * @param dimensionStatisticNames the new dimension statistic names
+	 * @param metricStatisticNames the new metric statistic names
 	 */
-	public void setDimensionStatisticNames(List<String> dimensionStatisticNames) {
-		this.dimensionStatisticNames = dimensionStatisticNames;
+	public void setMetricStatisticNames(List<String> metricStatisticNames) {
+		this.metricStatisticNames = metricStatisticNames;
 	}
 
 	/**
