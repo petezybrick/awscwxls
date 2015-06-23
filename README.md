@@ -12,8 +12,8 @@ To run:
 * Review properties/first.properties.  This is a very simple properties file that will extract EC2 statistics for a single instance
 * Update properties/first.properties based on the TODO comments in the file
 * Run
-	* Linux: 	./awscwxls properties/first.properties
-	* Windows:	awscwxls properties/first.properties
+	* Linux: 	./runcwxls properties/first.properties
+	* Windows:	runcwxls properties/first.properties
 * Review the spreadsheet
 * Advanced
 	* Review properties/template.properties.  This is an example of collecting stats from multiple Namespace/Dimension/Metric/Statistic combinations

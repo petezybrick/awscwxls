@@ -6,7 +6,7 @@ import org.junit.Test;
 import com.ipcglobal.awscwxls.main.ExtractSpreadsheet;
 import com.ipcglobal.awscwxls.util.LogTool;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class TestGetStatistics.
  */
